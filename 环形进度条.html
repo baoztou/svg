@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>环形进度条形状</title>
+  <style>
+    svg {
+      transform: rotate(-90deg);
+    }
+
+    svg:hover .process {
+      stroke-dashoffset: 0;
+    }
+
+    .process {
+      transition: all 2s linear 200ms;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <svg width="150px" height="150px" class="svg">
+    <circle r="70" cy="75" cx="75" stroke-width="8" stroke="#EAEFF4" stroke-linejoin="round" stroke-linecap="round"
+      fill="none" />
+    <circle class="progress" r="70" cy="75" cx="75" stroke-width="8" stroke="#1593FF" stroke-linejoin="round"
+      stroke-linecap="round" fill="none" stroke-dashoffset="0px" stroke-dasharray="471px" />
+  </svg> -->
+  <!-- svg
+    circle r是半径 cy是圆心的y坐标 cx是圆心的x坐标 stroke是实线颜色 stroke-width是实线的宽度 stroke-linecap是实线的端点表现形式
+    stroke-linejoin是指拐点的形状 fill是内部填充 stroke-dasharray是虚线,一个参数时： 表示一段虚线长度和每段虚线之间的间距
+    两个参数或者多个参数时：一个表示长度，一个表示间距
+    stroke-dashoffset是整个路径的偏移值 正就是左移动 负就是右移动
+    g标签是把svg的形状都结合到一起
+  -->
+  <svg width="170px" height="170px" class="svg-circle">
+    <circle r="80" fill="none" cy="85" cx="85" stroke="#eee" stroke-width="8"></circle>
+    <circle r="80" fill="none" cy="85" cx="85" stroke="red" stroke-width="8" stroke-linejoin="round"
+      stroke-dasharray="502" stroke-dashoffset="502" class="process"></circle>
+  </svg>
+  <span></span>
+  <!-- svg移动动画 -->
+  <!-- <svg>
+    <line id="line" x1="30" y1="30" x2="300" y2="30" stroke-width="20" stroke="red" stroke-dasharray="300,320" stroke-dashoffset="300" />
+  </svg> -->
+  <script>
+    //修改instanceof
+    // class PrimitiveString {
+    //   static[Symbol.hasInstance](x) {
+    //     return typeof x === "string"
+    //   }
+    // }
+    // console.log('hello hejunke' instanceof PrimitiveString)
+    //对象转换类型
+    let a={
+      [Symbol.toPrimitive](){
+        return 2
+      }
+    }
+    console.log(1+a)
+  </script>
+</body>
+
+</html>
